@@ -87,3 +87,10 @@
 
 //-------------LOGARITHMS--------------
 //The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value thats less than or equal to one. 
+
+//example if we start with 8 8/2=4 /2=2 /2=1 log(8)=3
+
+//Where will logarithmic time complexity come up.
+//Certain searching algos
+//Efficient Sorting algos
+//Recursion sometimes involves logs
