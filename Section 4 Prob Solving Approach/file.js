@@ -52,4 +52,6 @@ charCount("hello"); //{h:1, e:1, l:2, o:1}
 // It also helps you catch any lingering conceptual issues or misunderstandings before you dive in. 
 
 //-------------- SOLVE/SIMPLIFY THE PROBLEM -------------
+
+
 //-------------- LOOK BACK AND REFACTOR -------------
