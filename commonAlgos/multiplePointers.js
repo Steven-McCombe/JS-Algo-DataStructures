@@ -99,3 +99,27 @@ console.log(countUniqueValues([
     160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179,
     180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199
   ])) //198
+
+// While my solution passes the test. It seems the time complexity is O(n^2) due to the 
+//The splice() method used inside the while loop has a time complexity of O(n) in the worst case, 
+//as it needs to shift all elements after the removed element.
+
+
+// --------------Actual solution.----------------
+function countUniqueValuesActual(arr){
+    //If the array is empty then there will be no unique values. Return Zero.
+    if (arr.length === 0){
+        return 0
+    }
+    let i = 0;
+    for (var j = 1; j < arr.length; j++){
+        if(arr[i] !== arr[j]){
+            i++;
+            arr[i] = arr[j]
+        }
+        return i + 1
+    }
+}
+
+//The difference with this and my solution is the array indexes do not change. Just the values at those indexes. Instead of returning the length of the index
+// we return the index of i +1
