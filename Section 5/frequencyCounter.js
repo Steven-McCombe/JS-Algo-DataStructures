@@ -70,3 +70,42 @@ function same(arr1, arr2) {
 
 console.log(same([2,4,6,8],[4,16,36,64])) //true
 console.log(same([2,4,6,8],[4,16,36,63])) //false
+
+//Anagram Challenge
+
+//Given two strings, write a function to determine if the second string is an anagram of the first. 
+//An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema formed from iceman. 
+
+function validAnagram(str1, str2){
+    //first we need to check the length of both strings, if they are not equal it can't be true. 
+    if (str1.length !== str2.length){
+        return false;
+    }
+    // create two empty object to store the new string elements
+    let frequencyCounter1 = {}
+    let frequencyCounter2 = {}
+    //loop through each string and add a new kew to the object along with the frequency
+    for(let val of str1){
+        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1
+    }
+    for(let val of str2){
+        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1
+    }
+    for (let key in frequencyCounter1) {
+        if (!(key in frequencyCounter2)){
+            return false
+        }
+        if (frequencyCounter2[key] !== frequencyCounter1[key]){
+            return false
+        }
+    }
+    return true
+}
+console.log("\n------------ Valid Anagram -------------")
+console.log(validAnagram('','')) // T
+console.log(validAnagram('aaz','zza')) // F
+console.log(validAnagram('anagram','nagaram')) // T 
+console.log(validAnagram('rat','car')) // F
+console.log(validAnagram('awesome','awesom')) // F
+console.log(validAnagram('qwerty','qeywrt')) // T
+console.log(validAnagram('texttwisttime','timetwisttext')) // T 
